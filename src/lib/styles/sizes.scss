@@ -1,0 +1,10 @@
+$navbar-height: 72px;
+$footer-height: 40px;
+$content-width: min(90vw, 1200px);
+$page-padding-x: calc((100% - #{$content-width}) / 2);
+$page-padding-y: 40px;
+
+$phone-view-breakpoint: 950px;
+$tablet-view-breakpoint: 1100px;
+
+$border-radius: 20px;

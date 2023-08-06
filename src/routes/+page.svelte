@@ -17,52 +17,64 @@
   </a>
 </div>
 
-<style>
-    .main-container {
-        height: 100%;
+<style lang="scss">
+  @use "$lib/styles/colors" as colors;
+  @use "$lib/styles/sizes" as sizes;
 
-        display: grid;
-        grid-template-areas:
+
+  .main-container {
+    height: 100%;
+
+    display: grid;
+    grid-template-areas:
         ".       projects projects contacts"
         "gallery about    .        contacts"
         ".       about    .        .       ";
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 1em;
-    }
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1em;
+  }
 
-    .tile {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: var(--tile-background);
-        transition: background-color var(--tile-transition-duration);
-    }
+  .tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
 
-    .tile:hover {
-        background-color: var(--tile-hover-background);
-        color: var(--hover-text-color);
-    }
+    background-color: colors.$accent;
 
-    .tile h2 {
-        margin: 0;
-        font-size: 2.5em;
-        font-weight: 200;
-    }
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    word-break: break-all;
 
-    .gallery {
-        grid-area: gallery;
-    }
+    transition: background-color 0.2s;
+    border-radius: sizes.$border-radius;
+  }
 
-    .projects {
-        grid-area: projects;
-    }
+  .tile:hover {
+    background-color: colors.$neutral-light;
+    color: colors.$neutral-dark;
+  }
 
-    .about {
-        grid-area: about;
-    }
+  .tile h2 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 200;
+  }
 
-    .contacts {
-        grid-area: contacts;
-    }
+  .gallery {
+    grid-area: gallery;
+  }
+
+  .projects {
+    grid-area: projects;
+  }
+
+  .about {
+    grid-area: about;
+  }
+
+  .contacts {
+    grid-area: contacts;
+  }
 </style>

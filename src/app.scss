@@ -1,0 +1,76 @@
+@use "$lib/styles/colors" as colors;
+@use "$lib/styles/sizes" as sizes;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;800&display=swap');
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+h1 {
+  position: relative;
+  width: fit-content;
+
+  font-size: 4rem;
+  font-weight: 200;
+  margin: 0 0 0.5em 0;
+
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+
+  &::before {
+    content: '';
+    display: block;
+
+    position: absolute;
+    bottom: 0.1em;
+    left: 0.4em;
+    z-index: -1;
+
+    width: calc(100% - 0.4em);
+    height: 0.75em;
+    background-color: colors.$primary;
+    margin: 0.5em 0 0.5em 0;
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 200;
+  margin: 1em 0 0.5em 0;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 1em 0 0.5em 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: colors.$accent;
+  color: colors.$neutral-dark;
+}
+
+.material-symbols-rounded {
+  user-select: none;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  margin: 0;
+  padding: 0;
+  background-color: colors.$neutral-dark;
+}
+
+main {
+  min-height: calc(100vh - #{sizes.$navbar-height} - #{sizes.$footer-height});
+  padding: sizes.$page-padding-y sizes.$page-padding-x;
+  color: colors.$neutral-light;
+}
